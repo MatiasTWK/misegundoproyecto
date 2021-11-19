@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+button {
+  background-color: green; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+body {background-color: white;}
+h1 {
+  color: blue;
+  font-family: verdana;
+  font-size: 300%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 230px;
+}
+p {
+  color: red;
+  font-family: courier;
+  font-size: 100%;
+  border: 1px solid powderblue;
+  margin: 25px;
+}
+
+div {
+  color: green;
+  font-family: arial;
+  font-size: 100%;
+  border: 1px solid powderblue;
+  margin: 25px;
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  margin: 50px;
+  padding: 25px 50px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+<h1>MI PRIMERA PAGINA WEB</h1>
+<p>Hola esta es mi primera pagina. suscribete,activa la campanita y hasta luego.</p>
+<p>En el ejemplo, se ve que x,y,z son variables y que se debe sumar la x e y para poder dar la variable z.</p>
+
+
+<p id="si"></p>
+<script>
+
+var x = 5;
+var y = 6;
+var z = x + y;
+document.getElementById("si").innerHTML =
+"La variable z es : " + z;
+</script>
+
+
+<button onclick="myFunction()">Apreta este boton</button>
+<script>
+function myFunction() {
+  alert("Felicidades te ganaste una Key para jugar left 4 dead 2 a solo 500 pesos chilenos");
+}
+</script>
+
+
+<a href="https://www.youtube.com/">Aprete este boton para visitar youtubeee</a>
+<button type="button" onclick="window.alert(5 + 6)">Mira si apretas este boton te sale el numero chistoso</button>
+
+
+
+<button onclick="myFunction()">Clckee aqui</button>
+
+<p id="demo"></p>
+
+<script>
+
+function myFunction() {
+  let text;
+  let person = prompt("Deme su nombre y su apellido, ahora!:", " ");
+  if (person == null || person == "") {
+    text = "Debes ponerlo porfavor, me refiero al nombre jasfjajajaj.";
+  } else {
+    text = "Bievenido " + person + " Te ganaste la key de left 4 dead 2 este es mi steam: Moco vespertino";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+<div class="container">                 
+  <ul class="pager">
+    <li><a href="ejemplos" >Pagina anterior</a></li>
+    <li><a href="index" >Pagina siguiente</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
