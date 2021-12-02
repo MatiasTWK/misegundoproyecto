@@ -2,12 +2,18 @@ package cl.twk.proyectos.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -49,7 +55,11 @@ public class User implements Serializable {
 	
 	@UpdateTimestamp
 	private Date updateDate;
-
+	
+	@ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(updatable = true, name = "usuarios", referencedColumnName = "userId"), inverseJoinColumns = @JoinColumn(updatable = true, name = "authority", referencedColumnName = "idAuthority"))
+	private Set<Authority> authority;
+	
 	public Long getUserId() {
 		return userId;
 	}
@@ -120,5 +130,13 @@ public class User implements Serializable {
 
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
+	}
+
+	public Set<Authority> getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(Set<Authority> authority) {
+		this.authority = authority;
 	}
 }
