@@ -3,17 +3,27 @@
 <head>
 	<title>Bienvenido a la tienda de poleras Sutrotienda</title>
 	<script thisrc="@{/js/boostrap.js}"></script>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <style>
+body {
+	background-image: url("https://scontent.fzco2-1.fna.fbcdn.net/v/t1.6435-9/116878550_107510271061648_5909945319087522940_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=UTnn53VCbCUAX-Ex4yF&_nc_ht=scontent.fzco2-1.fna&oh=00_AT8dqlFH3fAYvTD5nr86gzZirVk8l4rHh3aIwqSOry1Whw&oe=61D8789F");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+
 h1 {
-  color: black;
+  color: green;
   font-family: arial;
-  font-size: 300%;
+  font-size: 250%;
   text-align: center;
 }
 img {
@@ -23,10 +33,44 @@ img {
 }
 </style>
 
+<body>
+<div class="container mt-3">
+  
+  <br>
+  
+ <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="ejemplos">Bienvenido Usuario</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+      <a class="nav-link" href="polerasequipos">Poleras de equipos</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="polerasdeportivas">Poleras deportivas o para entrenar</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="poleras">Poleras de selecciones</a>
+    </li> 
+    
+	
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" th:href="@{/logout}">Cerrar sesion</a>
+      
+    </ul>
+  </div>  
+</nav>
+
+   <br>
+
  <div style="text-align: center "> 
 <div class="container">
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click aqui para darte la mejor bienvenida nunca antes vista</button>
-  <div id="demo" class="collapse">
+  <div id="demo" class="collapse" color= "white">
   Bienvenidos a la mejor tienda y la mas simple tienda de poleras
   Encontraras poleras deportivas y poleras de equipos a un muy buen precio
   Esta tienda aun no tiene ubicacion clara pero por ahora estamos trabajando para un mejor servicio online
@@ -39,27 +83,8 @@ img {
  
 <div class="container">
   <h1>Bienvenido a la tienda mas simple de poleras deportivas</h1>
-  <img src="https://www.mercadoamericano.cl/wp-content/uploads/2020/07/polera-deportiva-fashion-190048-4695.jpg" class="img-circle"  width="640" height="480"> 
- <div style="text-align: left">   
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Poleras
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Poleras Deportivas </a></li>
-      <li><a href="#">Poleras de equipos</a></li>
-      <li><a href="poleras" >Poleras de selecciones</a></li>
-    </ul>
-  </div>
-</div>
-</div>
-</div>
+   
 
-<div class="container">                 
-  <ul class="pager">
-    <li><a href="#" >Pagina anterior</a></li>
-    <li><a href="index">Pagina siguiente</a></li>
-  </ul>
-</div>
 
 <div class="container">
   <form>
@@ -79,7 +104,7 @@ img {
     <div class="card-body">
       <h4 class="card-title">Matias gallardo</h4>
       <p class="card-text">Una persona que esta intentando crear una pagina y que esta se vea bonita,</p>
-      <a href="https://steamcommunity.com/profiles/76561198448885154/" class="btn btn-primary">Ver perfil</a>
+      <a href="https://steamcommunity.com/profiles/76561198448885154/" class="btn btn-success">Ver perfil</a>
     </div>
   </div>
 

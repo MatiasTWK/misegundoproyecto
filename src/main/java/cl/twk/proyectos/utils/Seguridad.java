@@ -6,7 +6,7 @@ public class Seguridad {
 
 	public static void main(String[] args) {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
-		String passwordEncode = bCryptPasswordEncoder.encode("scorpion1234");
+		String passwordEncode = bCryptPasswordEncoder.encode("1234");
 		
 		System.out.println("PASSWORD: " + passwordEncode);
 	}
