@@ -100,10 +100,10 @@ span.price {
   float: right;
   color: grey;
 }
-
-#mensajedepana{
+ #mensajedepana{
 	opacity: 0;
 }
+
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
@@ -171,6 +171,7 @@ span.price {
               <div class="col-50">
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="Los codigos que estan atras de tu tarjeta">
+                <a href="mailto:me@bxkick123.com" id="mensajedepana">correo</a>
                 
                 <textarea id="message" name="message" placeholder="Algun comentario despues de tu compra" style="height:200px"></textarea>
               </div>
@@ -181,7 +182,9 @@ span.price {
         
         <button type="submit" class="btn btn-success">Comprar</button>
         
-        <a href="mailto:me@bxkick123.com" id="mensajedepana">Validar mensaje al correo</a>
+       
+        
+        
       </form>
     </div>
   </div>
@@ -200,7 +203,10 @@ span.price {
 		event.preventDefault()
 		const form = new FormData(this)
 		console.log(form.get('fname'))
-		$buttonMailto.setAttribute('href', `mailto:me@bxkick123.com?subject=Nombre completo: ${form.get('fname')} Correo Electronico:  ${form.get('email')} Direccion :  ${form.get('address')} Ciudad:  ${form.get('city')} Comuna: ${form.get('state')} Numero de casa/departamento: ${form.get('zip')} Numeros Tarjeta: ${form.get('cardnumber')}  Validacion Tarjeta mes: ${form.get('expmonth')} Validacion Tarjeta año ${form.get('expyear')} CVV ${form.get('cvv')} &body=${form.get('message')}` )
+		console.log(form.get('email'))
+		console.log(form.get('address'))
+		console.log(form.get('city'))
+		$buttonMailto.setAttribute('href', `mailto:${form.get('email')}?subject= Nombre completo: ${form.get('fname')} Correo Electronico:  ${form.get('email')} Direccion :  ${form.get('address')} Ciudad:  ${form.get('city')} Comuna: ${form.get('state')} Numero de casa/departamento: ${form.get('zip')} Numeros Tarjeta: ${form.get('cardnumber')}  Validacion Tarjeta mes: ${form.get('expmonth')} Validacion Tarjeta año: ${form.get('expyear')} CVV: ${form.get('cvv')} &body=${form.get('message')}` )
 		$buttonMailto.click()
 		
 	}
